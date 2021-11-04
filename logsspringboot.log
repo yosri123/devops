@@ -65,3 +65,29 @@
 2021-11-04 00:44:54.342  INFO 15576 --- [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
 2021-11-04 04:45:59.040  WARN 9552 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h29s729ms412µs600ns).
 2021-11-04 08:04:58.730  WARN 9552 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h19m26s416ms58µs700ns).
+2021-11-04 09:04:00.133  WARN 9552 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=58m1s400ms825µs900ns).
+2021-11-04 09:20:09.413  INFO 8256 --- [main] t.esprit.spring.test.MissionServiceTest  : Starting MissionServiceTest on DESKTOP-7ORSNH9 with PID 8256 (started by 21655 in C:\Users\21655\Desktop\TimesheetProject)
+2021-11-04 09:20:09.413  INFO 8256 --- [main] t.esprit.spring.test.MissionServiceTest  : No active profile set, falling back to default profiles: default
+2021-11-04 09:20:11.372  INFO 8256 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2021-11-04 09:20:11.960  INFO 8256 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 569ms. Found 6 repository interfaces.
+2021-11-04 09:20:13.086  INFO 8256 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cf7c35aa] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-04 09:20:13.826  INFO 8256 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-04 09:20:14.622  INFO 8256 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-04 09:20:15.002  INFO 8256 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-11-04 09:20:15.348  INFO 8256 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2021-11-04 09:20:15.363  INFO 8256 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2021-11-04 09:20:16.511  INFO 8256 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2021-11-04 09:20:17.326  INFO 8256 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-04 09:20:21.275  INFO 8256 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 09:20:22.077  INFO 8256 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2021-11-04 09:20:24.191  INFO 8256 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-11-04 09:20:24.362  WARN 8256 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-04 09:20:25.161  INFO 8256 --- [main] t.esprit.spring.test.MissionServiceTest  : Started MissionServiceTest in 16.755 seconds (JVM running for 19.851)
+2021-11-04 09:20:25.639  INFO 8256 --- [main] t.e.spring.services.MissionServiceImpl   : In retrieveAllMissions() : 
+2021-11-04 09:20:25.990  INFO 8256 --- [main] t.e.spring.services.MissionServiceImpl   : Out of retrieveAllMissions() : 
+2021-11-04 09:20:26.141  INFO 8256 --- [Thread-1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-11-04 09:20:26.145  INFO 8256 --- [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 09:20:26.149  INFO 8256 --- [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-04 09:20:26.181  INFO 8256 --- [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
