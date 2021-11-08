@@ -6,5 +6,50 @@ pipeline {
                 echo 'hello'
             }
         }
+         stage('Build') {
+      steps{
+          
+          
+        dir('C:/Users/21655/Desktop/lastVersion') {
+                bat 'mvn clean install'
+      }}
+    }
+        
+          stage("Sonar") {
+            steps {
+                dir('C:/Users/21655/Desktop/lastVersion') {
+                bat 'mvn sonar:sonar'
+            }}}
+            
+        stage("nexus") {
+            steps {
+                dir('C:/Users/21655/Desktop/lastVersion') {
+                bat 'mvn clean package deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=Timesheet-spring-boot-core-data-jpa-mvc-REST-1 -Dversion=1.2 -DgeneratePom=true -Dpackaging=war -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/Timesheet-spring-boot-core-data-jpa-mvc-REST-1-0.0.1-SNAPSHOT.war -Dmaven.test.skip=true'
+            }
+        }}
+        
+        stage("Building docker image") {
+            steps {
+                dir('C:/Users/21655/Desktop/lastVersion') {
+                bat 'docker build -t springdocker . '
+            }
+               
+            }
+        }
+        
+      /*  stage("Running docker image") {
+            steps {
+                 dir('C:/Users/21655/Desktop/lastVersion') {
+                bat 'docker run -p 9090:8087 springdocker  '
+            }
+                
+            }
+        } */
+    
+        stage("Email") {
+            steps {
+               mail bcc: '', body: '''Pipeline has finished ! ''', cc: '', from: '', replyTo: '', subject: 'Jenkins Pipeline Results', to: 'yosri.bhiri@esprit.tn '
+            }
+        }
     }
 }
