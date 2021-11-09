@@ -43,6 +43,14 @@ pipeline {
                
             }
         }
+	
+	 stage('Upload Image') {
+     steps{    
+      
+            bat 'docker tag springdocker yosri74/firstrepo:springdocker'
+            bat  'docker push yosri74/firstrepo:springdocker '
+        }
+      }
         
       /*  stage("Running docker image") {
             steps {
