@@ -46,7 +46,7 @@ public class MissionServiceTest {
 		Mission missionRetrieved = ms.retrieveMission("1"); 
 		Assert.assertEquals(1L, missionRetrieved.getId().longValue());
 	}
-	
+	/*
  	@Test
 	public void testDeleteMission() {
 		ms.deleteMission("16");
@@ -54,5 +54,5 @@ public class MissionServiceTest {
 		
 		
 	}
-
+*/
 }
