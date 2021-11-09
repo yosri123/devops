@@ -22,7 +22,7 @@ public class MissionServiceTest {
 	@Test
 	public void testRetrieveAllMissions() {
 		List<Mission> listUsers = ms.retrieveAllMissions(); 
-		Assert.assertEquals(9, listUsers.size());
+		Assert.assertEquals(7, listUsers.size());
 	}
 	
 	@Test
@@ -30,6 +30,7 @@ public class MissionServiceTest {
 		Mission m = new Mission("WebDev", "WebDev"); 
 		Mission missionAdded = ms.addMission(m); 
 		Assert.assertEquals(m.getName() , missionAdded.getName());
+		ms.deleteMission(missionAdded.getId().toString());
 	}
 	
 	@Test
@@ -48,8 +49,10 @@ public class MissionServiceTest {
 	
  	@Test
 	public void testDeleteMission() {
-		ms.deleteMission("10");
-		Assert.assertNull(ms.retrieveMission("10"));
+		ms.deleteMission("17");
+		Assert.assertNull(ms.retrieveMission("17"));
+		
+		
 	}
-	
+
 }
