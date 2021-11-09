@@ -21,18 +21,11 @@ public class MissionServiceImpl implements IMissionService {
 	@Override
 	public List<Mission> retrieveAllMissions() { 
 		List<Mission> missions = null; 
-		try {
+	
 	
 			l.info("In retrieveAllMissions() : ");
 			missions = (List<Mission>) mr.findAll() ;
-			for (Mission mission : missions) {
-				l.debug("mission +++ : " + mission);
-			} 
 			l.info("Out of retrieveAllMissions() : ");
-		}catch (Exception e) {
-			l.error("Error in retrieveAllMissions() : " + e);
-		}
-
 		return missions;
 	}
 
@@ -54,10 +47,8 @@ public class MissionServiceImpl implements IMissionService {
 
 	@Override
 	public Mission retrieveMission(String id) {
-		l.info("in  retrieveMission id = " + id);
-		Mission m =  mr.findById(Long.parseLong(id)).orElse(null);
-		l.info("mission returned : " + m);
-		return m; 
+		return mr.findById(Long.parseLong(id)).orElse(null);
+	
 	}
 	
 }
