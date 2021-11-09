@@ -1,0 +1,72 @@
+pipeline {
+    agent any
+    stages {
+      
+         stage('Build phase') {
+      steps{
+          
+          
+        dir('C:/Users/21655/Desktop/lastVersion') {
+                bat 'mvn clean install'
+      }}
+    }
+   
+    stage ("Lancement des Tests Unitaires"){
+		 	steps{
+			dir('C:/Users/21655/Desktop/lastVersion') {
+				bat 'mvn test'
+			}}
+		 }
+		
+        
+          stage("Sonar") {
+            steps {
+                dir('C:/Users/21655/Desktop/lastVersion') {
+                bat 'mvn sonar:sonar'
+            }}}
+            
+        stage("nexus") {
+            steps {
+                dir('C:/Users/21655/Desktop/lastVersion') {
+                bat 'mvn clean package deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=Timesheet-spring-boot-core-data-jpa-mvc-REST-1 -Dversion=2.2 -DgeneratePom=true -Dpackaging=war -DrepositoryId=deploymentRepo -Durl=http://localhost:8081/repository/maven-releases/ -Dfile=target/Timesheet-spring-boot-core-data-jpa-mvc-REST-1-0.0.1-SNAPSHOT.war -Dmaven.test.skip=true'
+            }
+        }}
+        
+        stage("Building docker image") {
+            steps {
+                dir('C:/Users/21655/Desktop/lastVersion') {
+                bat 'docker build -f Dockerfile -t springdocker . '
+            }
+               
+            }
+        }
+	
+	 stage('Upload Image') {
+     steps{    
+      
+            bat 'docker tag springdocker yosri74/firstrepo:springdocker'
+            bat  'docker push yosri74/firstrepo:springdocker '
+        }
+      }
+      
+       stage('Setting up mysql container') {
+     steps{    
+  	bat 'docker run -d -p 6666:3306 --name=docker-mysql --env="MYSQL_ROOT_PASSWORD=123456" --env="MYSQL_DATABASE=timesheetdevops" mysql'
+        }
+      }
+      
+      
+        
+      /*  stage("Running docker image with mysql containter") {
+            steps {
+                bat 'docker run -y --link docker-mysql:mysql -p 10555:8080 springdocker '    
+            }
+        } */
+    
+        stage("Email") {
+            steps {
+              emailext attachLog: true, body: '', subject: 'Jenkins Pipeline Report', to: 'yosri.bhiri@esprit.tn'
+            }
+        }
+    }
+}
