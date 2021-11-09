@@ -14,13 +14,14 @@ pipeline {
                 bat 'mvn clean install'
       }}
     }
-    
+   /* 
     stage ("Lancement des Tests Unitaires"){
 		 	steps{
 			dir('C:/Users/21655/Desktop/lastVersion') {
 				bat 'mvn test'
 			}}
 		 }
+		 */
         
           stage("Sonar") {
             steps {
@@ -63,7 +64,7 @@ pipeline {
     
         stage("Email") {
             steps {
-              emailext attachLog: true, body: '', subject: 'Jenkins Pipeline Reports', to: 'yosri.bhiri@esprit.tn'
+              emailext attachLog: true, body: '', subject: 'Jenkins Pipeline Report', to: 'yosri.bhiri@esprit.tn'
             }
         }
     }
