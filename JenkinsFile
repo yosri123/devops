@@ -1,11 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('test') {
-            steps {
-                echo 'hello'
-            }
-        }
+      
          stage('Builds') {
       steps{
           
@@ -14,14 +10,14 @@ pipeline {
                 bat 'mvn clean install'
       }}
     }
-   /* 
+   
     stage ("Lancement des Tests Unitaires"){
 		 	steps{
 			dir('C:/Users/21655/Desktop/lastVersion') {
 				bat 'mvn test'
 			}}
 		 }
-		 */
+		
         
           stage("Sonar") {
             steps {
@@ -39,7 +35,7 @@ pipeline {
         stage("Building docker image") {
             steps {
                 dir('C:/Users/21655/Desktop/lastVersion') {
-                bat 'docker build -t springdocker . '
+                bat 'docker build -f Dockerfile -t springdocker . '
             }
                
             }
@@ -52,13 +48,18 @@ pipeline {
             bat  'docker push yosri74/firstrepo:springdocker '
         }
       }
+      
+       stage('Setting up mysql container') {
+     steps{    
+  	bat 'docker run -d -p 6666:3306 --name=docker-mysql --env="MYSQL_ROOT_PASSWORD=123456" --env="MYSQL_DATABASE=timesheetdevops" mysql'
+        }
+      }
+      
+      
         
-      /*  stage("Running docker image") {
+      /*  stage("Running docker image with mysql containter") {
             steps {
-                 dir('C:/Users/21655/Desktop/lastVersion') {
-                bat 'docker run -p 9090:8087 springdocker  '
-            }
-                
+                bat 'docker run -y --link docker-mysql:mysql -p 10555:8080 springdocker '    
             }
         } */
     
