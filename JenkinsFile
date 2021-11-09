@@ -23,7 +23,7 @@ pipeline {
 		 }
 		 */
         
-          stage("Sonnar") {
+          stage("Sonar") {
             steps {
                 dir('C:/Users/21655/Desktop/lastVersion') {
                 bat 'mvn sonar:sonar'
