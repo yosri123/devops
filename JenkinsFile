@@ -63,7 +63,7 @@ pipeline {
     
         stage("Email") {
             steps {
-               mail bcc: '', body: '''Pipeline has finished ! ''', cc: '', from: '', replyTo: '', subject: 'Jenkins Pipeline Results', to: 'yosri.bhiri@esprit.tn '
+              emailext attachLog: true, body: '', subject: 'Jenkins Pipeline Reports', to: 'yosri.bhiri@esprit.tn'
             }
         }
     }
