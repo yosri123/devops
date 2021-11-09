@@ -915,3 +915,28 @@
 2021-11-09 14:40:26.311  INFO 128 --- [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2021-11-09 14:40:26.314  INFO 128 --- [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-11-09 14:40:26.340  INFO 128 --- [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-11-09 14:47:12.573  INFO 10484 --- [main] t.esprit.spring.test.MissionServiceTest  : Starting MissionServiceTest on DESKTOP-7ORSNH9 with PID 10484 (started by 21655 in C:\Users\21655\Desktop\lastVersion)
+2021-11-09 14:47:12.579  INFO 10484 --- [main] t.esprit.spring.test.MissionServiceTest  : No active profile set, falling back to default profiles: default
+2021-11-09 14:47:14.467  INFO 10484 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2021-11-09 14:47:14.658  INFO 10484 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 176ms. Found 6 repository interfaces.
+2021-11-09 14:47:15.649  INFO 10484 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1baceb78] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-11-09 14:47:16.168  INFO 10484 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-09 14:47:16.568  INFO 10484 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-09 14:47:16.736  INFO 10484 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-11-09 14:47:16.898  INFO 10484 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2021-11-09 14:47:16.903  INFO 10484 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2021-11-09 14:47:17.232  INFO 10484 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2021-11-09 14:47:18.216  INFO 10484 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-09 14:47:23.202  INFO 10484 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-09 14:47:24.207  INFO 10484 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2021-11-09 14:47:26.808  INFO 10484 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-11-09 14:47:26.972  WARN 10484 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-09 14:47:28.078  INFO 10484 --- [main] t.esprit.spring.test.MissionServiceTest  : Started MissionServiceTest in 16.315 seconds (JVM running for 18.298)
+2021-11-09 14:47:28.731  INFO 10484 --- [main] t.e.spring.services.MissionServiceImpl   : In retrieveAllMissions() : 
+2021-11-09 14:47:28.778  INFO 10484 --- [main] t.e.spring.services.MissionServiceImpl   : Out of retrieveAllMissions() : 
+2021-11-09 14:47:28.938  INFO 10484 --- [Thread-1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-11-09 14:47:28.947  INFO 10484 --- [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-09 14:47:28.955  INFO 10484 --- [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-11-09 14:47:28.973  INFO 10484 --- [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
